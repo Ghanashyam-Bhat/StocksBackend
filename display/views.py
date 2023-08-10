@@ -3,6 +3,7 @@ from django.http import HttpResponse, JsonResponse
 import csv
 from io import TextIOWrapper
 from . import models
+import json
 
 # Create your views here.
 def preferenceSelection(request):
