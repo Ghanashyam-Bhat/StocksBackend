@@ -2,6 +2,7 @@ from django.contrib.auth import authenticate,login,logout
 from django.contrib.auth.models import User
 from django.http import JsonResponse
 import json
+from display import models as display
 
 # Create your views here.
 def login_api(request):    
@@ -32,6 +33,8 @@ def signup_api(request):
     try:
         # Create a new user
         user = User.objects.create_user(username=email, password=password)
+        new = display.User(id=email)
+        new.save()
         response =  JsonResponse({'message': 'SUCCESS'}, status=201)
         return response   
     except Exception as e:
