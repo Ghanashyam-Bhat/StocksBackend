@@ -1,4 +1,5 @@
 import yfinance as yf
+import pandas as pd
 def getStockData(stock_name,start_timestamp=None):
     try:
         if start_timestamp:
